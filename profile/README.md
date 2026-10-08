@@ -5,10 +5,10 @@ This organization is a place to build, share, and contribute OCI projects with C
 
 ## Start an OCI Python project
 
-Clone the [OCI Python Project Standard](https://github.com/oci-codex-powerusers/oci-python-project-skill) and link the included skill into Codex:
+Clone the [OCI Python Project Standard](https://github.com/oci-codex-incubator/oci-python-project-skill) and link the included skill into Codex:
 
 ```bash
-git clone https://github.com/oci-codex-powerusers/oci-python-project-skill.git
+git clone https://github.com/oci-codex-incubator/oci-python-project-skill.git
 cd oci-python-project-skill
 mkdir -p ~/.codex/skills
 ln -s "$PWD/skills/oci-python-project" ~/.codex/skills/oci-python-project
@@ -25,14 +25,14 @@ git init
 codex
 ```
 
-The Python skill guides implementation choices and includes documentation and a structural checker. Before considering a project complete, run its `uv` setup, tests, linting, and the included `check_project.py` checker. Start with the planning workflow below so the skill has a clear, reviewed context file to follow.
+The Python skill guides implementation choices and includes documentation and a structural checker. Before considering a project complete, run its `uv` setup, tests, linting, and the included `check_project.py` checker. For OCI Container Instances, it generates a shared `run/.env` and separate image build/push and deployment scripts, with network and Load Balancer ownership documented for the project. Start with the planning workflow below so the skill has a clear, reviewed context file to follow.
 
 ## Start an OCI Node.js project
 
-Clone the [OCI Node.js Project Standard](https://github.com/oci-codex-powerusers/oci-node-project-skill), then link the included skill into Codex:
+Clone the [OCI Node.js Project Standard](https://github.com/oci-codex-incubator/oci-node-project-skill), then link the included skill into Codex:
 
 ```bash
-git clone https://github.com/oci-codex-powerusers/oci-node-project-skill.git
+git clone https://github.com/oci-codex-incubator/oci-node-project-skill.git
 cd oci-node-project-skill
 mkdir -p ~/.codex/skills
 ln -s "$PWD/skills/oci-node-project" ~/.codex/skills/oci-node-project
