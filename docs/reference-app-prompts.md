@@ -27,3 +27,5 @@ Install the corresponding skill, create an empty folder, initialize Git, and ope
 ## After generation
 
 Review each app and its verification evidence, try its offline workflow, then opt into read-only live testing if desired. Use the organization handoff process when it is ready for shared ownership. A successful example validates that application and format, not every starter or production deployment. Add its repository, maintainer, skill revision, and tested scope to the catalog after it exists.
+
+For regular applications, environment updates, container setup, and contribution preparation, see the [common prompt guide](prompts.md).

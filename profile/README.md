@@ -3,6 +3,19 @@
 This organization is a place to build, share, and contribute OCI projects with Codex. Start new OCI-backed Python or Node.js projects with our standard skills, then bring your improvements back to the community.
 
 
+## Common prompts
+
+| Task | Prompt or guide |
+| --- | --- |
+| Create an application | [Plan, then build](../docs/prompts.md#plan-an-application) |
+| Update an existing application | [Apply the standard](../docs/prompts.md#update-an-existing-application) |
+| “Update my environment files based on code changes” | [Environment sync prompt](../docs/prompts.md#update-environment-files) |
+| “Set me up for Container deployment to OCI” | [Container setup prompt](../docs/prompts.md#set-up-container-deployment) |
+| Create a reference app | [Python and Node.js reference prompts](../docs/reference-app-prompts.md) |
+| Contribute | **[Contribution process](../CONTRIBUTING.md)** and [preparation prompt](../docs/prompts.md#contribute) |
+
+The [prompt guide](../docs/prompts.md) contains copyable requests and explains where to run them. Use application prompts in the application repository, with the appropriate skill installed.
+
 ## Projects and contribution
 
 See the [project catalog and roadmap](../docs/projects.md) for supported projects, maturity, ownership, and next contributions. Read the [contribution guide](../CONTRIBUTING.md), [security policy](../SECURITY.md), and [licensing guidance](../docs/licensing.md). After planning a regular application, you can also use the [Python and Node.js reference-application prompts](../docs/reference-app-prompts.md) to generate independent examples with verification evidence.
@@ -76,7 +89,7 @@ Read the [project planning guide](../docs/project-planning.md). It explains how 
 
 When the plan is correct, ask Codex to build from it:
 
-> Read `PROJECT_PLAN.md` and build the project it describes. Apply the `oci-python-project` or `oci-node-project` skill as appropriate. Preserve the plan's decisions and constraints, ask before making a material architecture or OCI deployment change, and document any necessary exception. Synchronize environment files with the code while preserving local values, regenerate the example from current inputs, mirror its active structure in the real env while retaining values, and move proven-unused local settings into one final Defunct values section as inactive comments, and validate configuration before the selected run/build/deploy operation.
+> Read `PROJECT_PLAN.md` and build the project it describes. Apply the `oci-python-project` or `oci-node-project` skill as appropriate. Preserve the plan's decisions and constraints, ask before making a material architecture or OCI deployment change, and document any necessary exception. Regenerate the environment example from current code and mirror its active structure in the real env while preserving local values. Move proven-unused local assignments into one final Defunct values section as inactive comments, and validate configuration before the selected run/build/deploy operation.
 
 When Codex is done, either check the built project's `README.md` or ask it how to run the project.  It is
 likely that some setup is required from the terminal, such as Python or Node.js runtimes.  You can ask
@@ -90,35 +103,10 @@ Before approving, read the proposed command or action and confirm its target, sc
 
 ## Contribute
 
-Don't keep useful improvements in a personal repository. Build projects using the shared standard, test and verify them, then contribute your improvements here. Adding documentation, tests, templates, and fixes to an existing repository is a great way to learn the collaboration workflow.
+Read the separate **[contribution guide](../CONTRIBUTING.md)** for the complete process:
 
-### 1. Build in your own GitHub account
+1. Improve an existing project in a branch or fork and submit a focused pull request, or build a new application in your personal repository.
+2. Run tests, lint/build, environment validation, and the appropriate structural checker; include verification evidence and review files for local configuration or generated artifacts.
+3. For a new project, agree on maintainers, visibility, licensing, and handoff with an organization owner, then transfer or push to the approved organization repository as the guide describes.
 
-Create and own the repository in your personal GitHub account while you are developing it. Run the project locally, verify its behavior, and make the initial history before asking the organization to take ownership:
-
-```bash
-git init
-git add .
-git commit -m "Initial project"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/my-oci-project.git
-git push -u origin main
-```
-
-Before the handoff, run the project's setup, tests, linting/build, and its structural checker (`check_project.py` for Python or `check-project.mjs` for Node.js). Review `git status` and the files being committed to ensure no OCI configuration, private keys, tokens, `.env` files, or generated artifacts are included.
-
-### 2. Move the repository into the organization
-
-When the project is ready for shared ownership, ask an organization owner to review it and confirm the intended repository name, visibility, maintainers, and any required license or contribution files. Then choose one of these paths:
-
-**Transfer the repository** — use this when the organization should become the repository's owner while preserving its full Git history, issues, releases, and pull requests. In the personal repository, open **Settings** → **General** → **Danger Zone** → **Transfer**, enter `oci-codex-incubator` as the new owner, and confirm the repository name. You need administrator access to the personal repository and permission to create repositories in the organization. GitHub keeps the original owner as a collaborator; organization policies apply after the transfer. See GitHub's [repository-transfer requirements and steps](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository).
-
-**Push to a new organization repository** — use this when an organization maintainer creates an empty destination repository first. Preserve the personal remote, add the organization remote, and push the reviewed branch after you have been granted write access:
-
-```bash
-git remote rename origin personal
-git remote add origin git@github.com:oci-codex-incubator/my-oci-project.git
-git push -u origin main
-```
-
-If you do not have the necessary organization permission, do not attempt the transfer or push. Send the personal repository URL to an organization owner and ask them to create the destination repository or approve the transfer.
+Reference applications follow the same process. Use the [contribution-preparation prompt](../docs/prompts.md#contribute) when you want Codex to help get the work ready for review.
