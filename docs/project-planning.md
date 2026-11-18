@@ -149,7 +149,7 @@ Start with a planning request. Ask Codex to write or refine `PROJECT_PLAN.md`, e
 
 Once the plan reads correctly, ask Codex to build from it:
 
-> Read `PROJECT_PLAN.md` and build the project it describes. Apply the `oci-python-project` or `oci-node-project` skill as appropriate. Preserve the decisions and constraints in the plan, ask before making a material architecture or OCI deployment change, and document any necessary exception. Keep the example and selected ignored local environment file synchronized with code, preserve local values, retain proven-defunct values as inactive DEFUNCT comments locally, and validate configuration for the chosen operation before running or containerizing it.
+> Read `PROJECT_PLAN.md` and build the project it describes. Apply the `oci-python-project` or `oci-node-project` skill as appropriate. Preserve the decisions and constraints in the plan, ask before making a material architecture or OCI deployment change, and document any necessary exception. Keep the example and selected ignored local environment file synchronized with code, preserve local values, regenerate the example from current inputs, mirror its active names/order/explanations in the real env while preserving values, and move proven-defunct local assignments to one final Defunct values section as inactive DEFUNCT comments, and validate configuration for the chosen operation before running or containerizing it.
 
 Review the plan whenever the audience, workflow, OCI services, deployment target, or team ownership changes. Update the context file first, then ask Codex to implement the revised plan.
 

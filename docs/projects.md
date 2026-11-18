@@ -19,7 +19,7 @@ Workflow definitions do not imply that a hosted run has passed. Inspect each rep
 
 ## Environment maintenance
 
-Both language skills include a source-review workflow for synchronizing configuration after code or requirement changes. It keeps active local values, removes proven-defunct inputs from the example while preserving their local values as inactive DEFUNCT comments, retains uncertain indirect consumers, and requires read-only validation before local/build/deploy operations. The skill's structural checker is not a source scanner or proof of configuration validity.
+Both language skills include a source-review workflow for synchronizing configuration after code or requirement changes. It regenerates the example from current code and requirements, mirrors its active names/order/explanations in the real env while preserving values, moves proven-defunct local assignments to one final Defunct values section as inactive DEFUNCT comments, retains uncertain indirect consumers, and requires read-only validation before local/build/deploy operations. The skill's structural checker is not a source scanner or proof of configuration validity.
 
 ## Scope and compatibility
 
