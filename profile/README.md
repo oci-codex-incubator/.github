@@ -76,7 +76,7 @@ Read the [project planning guide](../docs/project-planning.md). It explains how 
 
 When the plan is correct, ask Codex to build from it:
 
-> Read `PROJECT_PLAN.md` and build the project it describes. Apply the `oci-python-project` or `oci-node-project` skill as appropriate. Preserve the plan's decisions and constraints, ask before making a material architecture or OCI deployment change, and document any necessary exception.
+> Read `PROJECT_PLAN.md` and build the project it describes. Apply the `oci-python-project` or `oci-node-project` skill as appropriate. Preserve the plan's decisions and constraints, ask before making a material architecture or OCI deployment change, and document any necessary exception. Synchronize environment files with the code while preserving local values, mark proven-unused local settings DEFUNCT as inactive comments, and validate configuration before the selected run/build/deploy operation.
 
 When Codex is done, either check the built project's `README.md` or ask it how to run the project.  It is
 likely that some setup is required from the terminal, such as Python or Node.js runtimes.  You can ask

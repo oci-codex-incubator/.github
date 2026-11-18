@@ -17,6 +17,10 @@ Workflow definitions do not imply that a hosted run has passed. Inspect each rep
 3. Have organization owners assign maintainers, choose approved licenses, and confirm a private vulnerability-reporting path for each repository.
 4. Validate a container deployment in a designated OCI test environment, recording rollout, rollback, IAM, networking, and cleanup evidence without credentials or real resource identifiers.
 
+## Environment maintenance
+
+Both language skills include a source-review workflow for synchronizing configuration after code or requirement changes. It keeps active local values, removes proven-defunct inputs from the example while preserving their local values as inactive DEFUNCT comments, retains uncertain indirect consumers, and requires read-only validation before local/build/deploy operations. The skill's structural checker is not a source scanner or proof of configuration validity.
+
 ## Scope and compatibility
 
 Both skills maintain local and OCI Container Instances workflows with one shared `run/.env`, `RUN_ENV_FILE` overrides, and `build-push-image.sh` / `deploy-container-instance.sh` when containers are selected. Load Balancer ownership is explicit and optional. Existing Node adopters using the older script names or a separate container env file need to migrate deliberately; preserve their working interfaces until the project owner accepts that change.
