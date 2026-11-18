@@ -155,4 +155,6 @@ Review the plan whenever the audience, workflow, OCI services, deployment target
 
 ## Related
 
-- [OCI Codex Power Users profile and skill installation](../profile/README.md)
+- [OCI Codex Incubator profile and skill installation](../profile/README.md)
+
+For a small application that also exercises the standard, use the [reference-application prompts](reference-app-prompts.md). Each language has a planning prompt followed by a build, test, and local-commit prompt.

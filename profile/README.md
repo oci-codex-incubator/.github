@@ -1,7 +1,11 @@
-# OCI Codex Power Users
+# OCI Codex Incubator
 
 This organization is a place to build, share, and contribute OCI projects with Codex. Start new OCI-backed Python or Node.js projects with our standard skills, then bring your improvements back to the community.
 
+
+## Projects and contribution
+
+See the [project catalog and roadmap](../docs/projects.md) for supported projects, maturity, ownership, and next contributions. Read the [contribution guide](../CONTRIBUTING.md), [security policy](../SECURITY.md), and [licensing guidance](../docs/licensing.md). After planning a regular application, you can also use the [Python and Node.js reference-application prompts](../docs/reference-app-prompts.md) to generate independent examples with verification evidence.
 
 ## Start an OCI Python project
 
@@ -101,19 +105,19 @@ git remote add origin https://github.com/YOUR-USERNAME/my-oci-project.git
 git push -u origin main
 ```
 
-Before the handoff, run the project's setup, tests, linting, and `check_project.py` check. Review `git status` and the files being committed to ensure no OCI configuration, private keys, tokens, `.env` files, or generated artifacts are included.
+Before the handoff, run the project's setup, tests, linting/build, and its structural checker (`check_project.py` for Python or `check-project.mjs` for Node.js). Review `git status` and the files being committed to ensure no OCI configuration, private keys, tokens, `.env` files, or generated artifacts are included.
 
 ### 2. Move the repository into the organization
 
 When the project is ready for shared ownership, ask an organization owner to review it and confirm the intended repository name, visibility, maintainers, and any required license or contribution files. Then choose one of these paths:
 
-**Transfer the repository** — use this when the organization should become the repository's owner while preserving its full Git history, issues, releases, and pull requests. In the personal repository, open **Settings** → **General** → **Danger Zone** → **Transfer**, enter `oci-codex-powerusers` as the new owner, and confirm the repository name. You need administrator access to the personal repository and permission to create repositories in the organization. GitHub keeps the original owner as a collaborator; organization policies apply after the transfer. See GitHub's [repository-transfer requirements and steps](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository).
+**Transfer the repository** — use this when the organization should become the repository's owner while preserving its full Git history, issues, releases, and pull requests. In the personal repository, open **Settings** → **General** → **Danger Zone** → **Transfer**, enter `oci-codex-incubator` as the new owner, and confirm the repository name. You need administrator access to the personal repository and permission to create repositories in the organization. GitHub keeps the original owner as a collaborator; organization policies apply after the transfer. See GitHub's [repository-transfer requirements and steps](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository).
 
 **Push to a new organization repository** — use this when an organization maintainer creates an empty destination repository first. Preserve the personal remote, add the organization remote, and push the reviewed branch after you have been granted write access:
 
 ```bash
 git remote rename origin personal
-git remote add origin git@github.com:oci-codex-powerusers/my-oci-project.git
+git remote add origin git@github.com:oci-codex-incubator/my-oci-project.git
 git push -u origin main
 ```
 
